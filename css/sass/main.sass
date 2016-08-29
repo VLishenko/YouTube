@@ -1,0 +1,245 @@
+@import "bourbon/bourbon"
+@mixin bdr($bdr) 
+	border-radius: $bdr
+	-moz-border-radius: $bdr
+	-webkit-border-radius: $bdr
+
+
+*
+	margin: 0
+	padding: 0
+body
+	font-family: "OpenSans", sans-serif
+	font-weight: 300
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+	font-size: 62.5%
+	color: #000
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+a:hover,
+a:visited,
+a:link,
+a:active 
+	text-decoration: none !important
+a
+	outline: none !important
+
+input,
+textarea,
+textarea:focus,
+input:focus
+	outline: none !important
+
+
+.container
+	max-width: 80em
+	margin: auto
+	position: relative
+
+
+//Header
+.header
+	background-color: #231F20
+	padding: 0.4em 0 
+
+	ul
+		display: block
+		position: relative
+		text-align: center
+		padding: 0 10em
+	li
+		display: inline-block
+		text-transform: uppercase
+		font-size: 1.8em
+		&:after
+			content: '|'
+			color: #fff
+			padding: 0 0.2em
+		&:last-child:after
+			content: ''
+		a
+			color: #fff
+
+.header-language
+	display: inline-block
+	font-size: 1.4em
+	min-width: 4.7em
+	min-height: 1.7em
+	border: 1px solid #fff
+	text-align: center
+	+bdr (1.3em)
+	&--position
+		position: absolute
+		top: 0
+		right: 0
+	a
+		display: inline-block
+		padding: 0.1em 0.7em
+		color: #fff
+
+//Main Content
+
+.youtube-logo
+	width: 100%
+	text-align: center
+	&--position
+		padding: 5.5em 0 6.4em 0
+
+.golden-line
+	content: ''
+	display: inline-block
+	vertical-align: middle
+	height: 1em
+	background-image: url("../img/gold-divider.png")
+	background-repeat: repeat-x
+	width: 100%
+
+
+.slider-wrap 
+	background-color: #fff
+
+	.slider-item
+		width: 23.6em
+		position: relative
+		height: 47em
+		display: -webkit-flex
+		display: -webkit-box
+		display: -ms-flexbox
+		display: flex
+		-webkit-flex-direction: row
+		flex-direction: row
+		-webkit-flex-wrap: wrap
+		flex-wrap: wrap
+		text-align: center
+		-webkit-justify-content: center
+		justify-content: center
+		margin: 0 1em
+		
+		a
+			-webkit-align-self: flex-end	
+			align-self: end	
+
+		img
+			width: 23.6em
+			height: auto
+			
+		
+		span
+			-webkit-align-self: flex-end	
+			align-self: flex-end
+			font-size: 1.8em
+			-webkit-align-items: baseline
+			align-items: baseline
+			min-height: 3em
+			font-weight: 400
+			width: 100%
+
+//Footer
+.footer
+	background-color: #231f20
+	min-height: 29em
+	color: #fff
+	font-family: "Loto"
+	font-weight: 400
+
+.footer-form
+	display: inline-block
+	width: 27em
+	padding-top: 1em
+	padding-right: 2.7em
+	float: left
+	
+	input[type="text"]
+		display: block
+		border: none
+		width: 18.1em
+		height: 1.9em
+		background-color: #fff
+		padding: 0 1em
+		+bdr(0.5em)
+	input:focus
+		+bdr(0.5em)
+	label
+		font-size: 1.4em
+.valid-code
+	display: inline-block
+	padding-bottom: 0.6em
+	letter-spacing: 0.06em
+
+.capcha
+	width: 26.7em
+	height: 6.5em
+	background-color: #fff
+	margin-top: 1.7em
+	margin-bottom: 1.6em
+
+.agreement
+	font-size: 1.2em
+	letter-spacing: -0.05em
+	a
+		text-decoration: underline
+		color: #FFF
+		font-weight: 600
+
+.footer-continue-btn
+	display: block
+	color: #fff
+	background-color: #2661dd
+	border: none
+	width: 4.7em
+	height: 2.3em
+	&--position
+		margin-top: 0.6em
+
+.form-description
+	display: inline-block
+	width: 33em
+	padding-top: 1em
+	font-size: 1.4em
+	p
+		line-height: 1.7em
+		span
+			font-weight: 600
+
+.footer-terms
+	width: 100%
+	text-align: center
+	margin-top: 3.3em
+	li
+		display: inline-block
+		font-size: 1.2em
+		margin: 0px 0.3em
+		a
+			color: #fff
+
+
+.mob_but
+	display: none
+	margin: 1em 0
+	text-align: center
+
+.mob_but button span
+	display: inline-block
+	width: 3em
+	height: 0.5em
+	background-color: #fff
+	margin: 0.2em 0
+	border-radius: 1em
+
+.mob_but button
+	cursor: pointer
+	width: 3em
+	text-align: center
+	padding: 0
+	border: 0
+	outline: none
+	background: none
+ 
