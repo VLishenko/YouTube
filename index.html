@@ -14,10 +14,12 @@
 	<link rel="shortcut icon" href="favicon.png" />
 	<link rel="stylesheet" href="libs/slick/slick.css" />
 	<link rel="stylesheet" href="libs/slick/slick-theme.css" />
+	<link rel="stylesheet" href="libs/magnific-popup/magnific-popup.css" />
 
 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/media.css" />
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 	<!--[if lt IE 9]>
@@ -46,9 +48,18 @@
 				<li><a href="">LOGIN</a></li>
 			</ul>
 
-			<div class="header-language header-language--position">
+			<div class="header-language header-language--position" id="language_btn">
 				<a href="#">English</a>
 			</div>
+			
+			<div>
+				<ul class="languale-list hidden">
+					<li><a href="#">Russian</a></li>
+					<li><a href="#">French</a></li>
+				</ul>
+			</div>
+
+
 		</div>
 	</header>
 
@@ -69,7 +80,7 @@
 			<div class="slider-wrap">
 
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Gold-YouTube-right.jpg" alt="Gold-YouTube">
 					</a>
 
@@ -78,82 +89,39 @@
 				</div>
 				
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Diamond-YouTube-right.jpg" alt="Gold-YouTube" width="407" height="368">
 					</a>
 					<span>Production Plaque with Emmy® Statuette</span>
 				</div>
 
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Silver-YouTube-right.jpg" alt="Gold-YouTube">
 					</a>
 					<span>Nomination Plaque</span>
 				</div>
 				
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Gold-YouTube-right.jpg" alt="Gold-YouTube">
 					</a>
 					<span>Commemorative Statuette!</span>	
 				</div>
 				
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Diamond-YouTube-right.jpg" alt="Gold-YouTube">
 					</a>
 					<span>Production Plaque with Emmy® Statuette</span>
 				</div>
 
 				<div class="slider-item">
-					<a href="#">
+					<a href="#pop-up-validation">
 						<img src="images/Silver-YouTube-right.jpg" alt="Gold-YouTube">
 					</a>
 					<span>Nomination Plaque</span>
 				</div>
-				
-				<!-- <div>
-					<a href="#" class="slider-item">
-						<img src="images/Gold-YouTube-right.jpg" alt="Gold-YouTube">
-						<span>Commemorative Statuette!</span>	
-					</a>
-				</div>
-
-				
-				<div>
-					<a href="#" class="slider-item">
-						<img src="images/Diamond-YouTube-right.jpg" alt="Gold-YouTube" width="407" height="368">
-						<span>Production Plaque with Emmy® Statuette</span>
-					</a>
-				</div>
-
-				<div>
-					<a href="#" class="slider-item"> 
-						<img src="images/Silver-YouTube-right.jpg" alt="Gold-YouTube">
-						<span>Nomination Plaque</span>
-					</a>
-				</div>
-				
-				<div>
-					<a href="#" class="slider-item"> 
-						<img src="images/Gold-YouTube-right.jpg" alt="Gold-YouTube">
-						<span>Commemorative Statuette!</span>	
-					</a>
-				</div>
-				
-				<div>
-					<a href="#" class="slider-item">
-						<img src="images/Diamond-YouTube-right.jpg" alt="Gold-YouTube" width="407" height="368">
-						<span>Production Plaque with Emmy® Statuette</span>
-					</a>
-				</div>
-
-				<div>
-					<a href="#" class="slider-item">
-						<img src="images/Silver-YouTube-right.jpg" alt="Gold-YouTube">
-						<span>Nomination Plaque</span>
-					</a>
-				</div> -->
 
 			</div>
 		</div>
@@ -172,7 +140,9 @@
 					<label for="valid_code" class="valid-code">Enter your validation code:</label>
 					<input type="text" id="valid_code">
 
-					<div class="capcha"></div>
+					<div class="capcha">
+						<div class="g-recaptcha" data-sitekey="6LfEyCgTAAAAAGOMu_ilb8aY4oEw9kssoH3EKK1H"></div>
+					</div>
 
 					<input type="checkbox" id = "form_agreement" name="agreement">
 					<label for="form_agreement" class="agreement">I agree to the <a href="#">Terms and Conditions </a> of use.</label>
@@ -196,18 +166,81 @@
 
 			<div class="footer-terms">
 				<ul>
-					<li><a href="#">Terms </a></li>
-					<li><a href="#">Conditions</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Disclaimer</a></li>
+					<li><a href="#pop-up-terms">Terms </a></li>
+					<li><a href="#pop-up-terms">Conditions</a></li>
+					<li><a href="#pop-up-terms">Privacy Policy</a></li>
+					<li><a href="#pop-up-terms">Disclaimer</a></li>
 				</ul>
 			</div>
+		</div>
+	</div>
+
+	<div class="pop-up-validation" >
+		<div class="pop-up-validation-wrap" id="pop-up-validation">
+			<p>Please enter your Validation Code below to proceed:</p>
+			<div class="mfp-close">Close</div>
+		</div>
+	</div>
+
+	<div class="pop-up-terms">
+		<div class="pop-up-terms-wrap" id="pop-up-terms">
+
+			<div class="pop-up-terms--text">
+				IMPORTANT NOTICE
+				<br><br>
+				We reserve the right to add to and/or change the Partner Rewards program (“program”) Terms & Conditions at any time. This means, for example, that we may change the number of subscribers required to redeem rewards, impose caps on earning and/or redeeming points, and/or cancel rewards. In addition, we reserve the right to terminate the program with three months prior notice. During the three-month notice period, we may change or cancel some or all of the then-current rewards. The Partners (“you,” “your” or “Partners”) right to redeem rewards will terminate three months after we give you this notice.
+				<br><br>
+				ELIGIBILITY
+				<br><br>
+				1. The program is available to members of the YouTube Partner Program. Individual users, advertisers or other entities not listed in this paragraph are not eligible for enrollment in the program. Program eligibility is subject to change.
+				2. All YouTube accounts must be active partners meaning their partnership and/or account is not pending, suspended or inactive at the time of enrollment.
+				3. Each partner channel is eligible for enrollment in the program but rewards will be limited to one per partner. Each partner channel participating in the program is called a “Linked Channel” herein.
+				<br><br>
+				REWARDS ACCRUAL
+				<br><br>
+				1. Enrolled Partners will accrue one point in their program account for every eligible subscriber on their Linked Channels, provided such subscribers are valid, verifiable and organic, and not gamed, improperly received or otherwise in violation of the YouTube Terms of Service, Community Guidelines and Partner Program Guidelines.
+				2. Subscribers posted to your Linked Channels, including those arising from YouTube reductions or subscriber filtrations, will reduce the points accrued in your program account.
+				<br><br>
+				POINT FORFEITURE FOR ACCOUNT CANCELLATION
+				<br><br>
+				1. If for any reason we cancel any Linked Channel (including because of a policy violation, strike out or at your request), any points accrued in your program account will be forfeited.
+				2. If you voluntarily cancel enrollment in the program or cancel all Linked Channels enrolled in the program but keep at least one channel open and in good standing, you will have up to 30 days from date of cancellation to redeem the points accrued in the program account.
+				3. If any Linked Channel is not in good standing, your enrollment in the program may be canceled or the points accrued in your program account forfeited.
+				<br><br>
+				GENERAL REWARDS AND POINT REDEMPTION INFORMATION
+				<br><br>
+				1. All rewards are subject to availability. Certain rewards are available only during the time periods described in the program communications (including program website).
+				2. Redeemed rewards are not refundable, exchangeable, replaceable, redeemable or transferable for cash, credit, other rewards or points under any circumstances.
+				3. By redeeming rewards, you release YouTube LLC, Google Inc., and its parent, subsidiaries and affiliates from any and all liability regarding the redemption or use of rewards or other participation in the program.
+				4. Rewards must be redeemed in accordance with program communications. Google and participating merchants are not responsible for replacing lost, stolen or mutilated rewards.
+				5. We reserve the right to modify or cancel any reward at any time.
+				6. Some rewards require an additional charge for shipping and handling.
+				7. Please note any special instructions or restrictions as you request your redemption. All rewards are available while quantities last. Product specifications are subject to change without notice and all product orders are subject to product availability. You will be notified if the item you have ordered is not available and when it will become available. We reserve the right to substitute items of equal or greater value. Items ordered at the same time may arrive separately. We will ship the model pictured or the most current comparable model available (we are not responsible for typographical or pictorial errors.) Items shown were the latest models available at the time of printing. We reserve the right to modify or cancel rewards offered in program without notice.
+				<br><br>
+				GENERAL
+				<br><br>
+				1. Fraud or abuse relating to the accrual of points or redemption of rewards may result in forfeiture of accrued points as well as cancellation of your program account and possible any YouTube or Google account.
+				2. The program is intended to be a service provided to an individual. It is therefore considered fraudulent and abusive for any individual or company to direct, encourage or allow a third party agency, site, bot or any other non- user initiated subscribing mechanism for the accrual of subscribers.
+				3. If you’re a part of a network and you or your network is suspended or terminated, your opportunity to redeem points accrued in your program account will also be suspended simultaneously.
+				4. All questions or disputes regarding eligibility for the program, eligibility of points for accrual, conversion of points or redemptions of rewards will be resolved by YouTube at its sole discretion.
+				5. The determination of tax liability for any federal, state or local taxes (as may be applicable) arising out of the accrual or conversion of points or redemption of rewards in the program shall be your sole responsibility.
+				6. We are not responsible for typographical errors and/or photographic errors and/or omissions in these rules.
+				7. These Terms & Conditions supersede all previous statements, reports, descriptions or explanations of the partner program.
+				8. These Terms & Conditions are governed by and construed under the laws (excluding conflicts of law provisions) of Santa Clara County, California. 
+			</div>
+
+			<form method="post">
+				<input type="checkbox" id = "form_agreement" name="agreement">
+					<label for="form_agreement" class="agreement">I agree to the <a href="#">Terms and Conditions </a> of use.</label>
+					<button class="footer-continue-btn footer-continue-btn--position">Continue</button>
+			</form>
 		</div>
 	</div>
 
 	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
 	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 	<script src="libs/slick/slick.js"></script>
+	<script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/common.js"></script>
 	<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->

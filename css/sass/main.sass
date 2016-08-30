@@ -3,6 +3,10 @@
 	border-radius: $bdr
 	-moz-border-radius: $bdr
 	-webkit-border-radius: $bdr
+@mixin box-shadow($top, $left, $size, $blur, $color) 
+	-webkit-box-shadow: $top $left $size $blur $color
+	-moz-box-shadow: $top $left $size $blur $color
+	box-shadow: $top $left $size $blur $color
 
 
 *
@@ -38,6 +42,12 @@ textarea:focus,
 input:focus
 	outline: none !important
 
+html,
+body 
+	height: 100%
+
+.hidden
+	display: none !important
 
 .container
 	max-width: 80em
@@ -67,6 +77,58 @@ input:focus
 			content: ''
 		a
 			color: #fff
+ul.languale-list
+	position: absolute
+	width: 10em
+	text-align: right
+	top: 0
+	right: 0
+	padding: 0
+	margin-top: 4em
+	border: 1px solid #bbb 
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.15)
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.15)
+	box-shadow: 0 3px 3px rgba(0,0,0,0.15)
+	background-color: #fff
+	z-index: 3
+	li
+		display: block
+		font-size: 1.4em
+		text-transform: none
+		&:hover
+			background: #e8e8e8
+		&:after
+			display: none
+	a
+		display: block
+		color: #000
+		height: 2em
+		padding-top: 0.5em
+		padding-right: 0.5em
+
+	&:before,
+	&:after
+		bottom: 100%
+		left: 50%
+		border: solid transparent
+		content: " "
+		height: 0
+		width: 0
+		position: absolute
+		pointer-events: none
+
+	&:before
+		border-color: rgba(187, 187, 187, 0)
+		border-bottom-color: #bbb
+		border-width: 7px
+		margin-left: 1.2em	
+	&:after
+		border-color: rgba(0, 0, 0, 0)
+		border-bottom-color: #fff
+		border-width: 6px
+		margin-left: 1.3em
+		
+	
 
 .header-language
 	display: inline-block
@@ -109,7 +171,8 @@ input:focus
 	.slider-item
 		width: 23.6em
 		position: relative
-		height: 47em
+		height: 40em
+		display: block
 		display: -webkit-flex
 		display: -webkit-box
 		display: -ms-flexbox
@@ -152,7 +215,7 @@ input:focus
 
 .footer-form
 	display: inline-block
-	width: 27em
+	width: 31em
 	padding-top: 1em
 	padding-right: 2.7em
 	float: left
@@ -160,15 +223,19 @@ input:focus
 	input[type="text"]
 		display: block
 		border: none
-		width: 18.1em
+		width: 20.5em
+		// width: 5.5em
 		height: 1.9em
 		background-color: #fff
 		padding: 0 1em
 		+bdr(0.5em)
+
 	input:focus
 		+bdr(0.5em)
+
 	label
 		font-size: 1.4em
+		padding-left: 0.3em
 .valid-code
 	display: inline-block
 	padding-bottom: 0.6em
@@ -183,7 +250,7 @@ input:focus
 
 .agreement
 	font-size: 1.2em
-	letter-spacing: -0.05em
+	letter-spacing: 0
 	a
 		text-decoration: underline
 		color: #FFF
@@ -243,3 +310,75 @@ input:focus
 	outline: none
 	background: none
  
+//Pop-up validation
+.pop-up-validation 
+	display: none
+.pop-up-validation-wrap
+	position: relative
+	display: block
+	margin: auto
+	width: 16.1em
+	height: 4.1em
+	font-size: 1.6em
+	padding: 5.3em 3.7em
+	text-align: center
+	font-weight: 600
+	background-color: #fff
+	border: 2px solid #e8e8e8
+	+bdr (0.5em)
+	+box-shadow( 0, 0, 16.5px, 0.5px,rgba(0, 0, 0, 0.69) )
+	.mfp-close
+		text-transform: uppercase
+		text-decoration: underline !important
+		color: #000
+		font-weight: 800
+		cursor: pointer
+ 
+//Pop-up terms
+.pop-up-terms
+	display: none
+.pop-up-terms-wrap
+	background-color: #fff
+	position: relative
+	display: block
+	margin: auto
+	width: 62.2em
+	height: 66.6em
+	border: 2px solid #e8e8e8
+	+bdr (0.5em)
+	+box-shadow (0, 0, 16.5px, 0.5px, rgba(0, 0, 0, 0.69))
+
+	.pop-up-terms--text
+		width: 38.4em
+		height: 36em
+		overflow-y: scroll
+		padding: 2em 3em
+		font-weight: 400
+		font-size: 1.4em
+		color: #313131
+
+	form
+		width: 90%
+		border-top: 1px solid #e8e8e8
+		margin: auto
+		padding-top: 2em
+	a
+		color: #000
+		text-decoration: underline !important
+	.mfp-close 
+		width: 44px
+		height: 44px
+		line-height: 44px
+		position: absolute
+		right: 20px
+		top: 0
+		text-decoration: none
+		text-align: center
+		opacity: 0.65
+		filter: alpha(opacity=65)
+		padding: 0 0 18px 10px
+		color: #000
+		font-style: normal
+		font-size: 28px
+		font-family: Arial, Baskerville, monospace
+
